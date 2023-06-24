@@ -39,6 +39,9 @@ likeButton.addEventListener('click', function () {
 
     let listItem = document.createElement("li");
     listItem.textContent = `${selectedQuote.quote} ${selectedQuote.author}`;
+    listItem.style.padding = '8px';
+    listItem.style.fontSize='1.2rem';
+    
 
     favoriteQuotesContainer.appendChild(listItem);
   }

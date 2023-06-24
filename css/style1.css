@@ -201,6 +201,7 @@ a:active {
   
   .like-button:hover .like-icon {
       stroke: #FF6B6B;
+      cursor: pointer;
   }
   .title{
     margin-top:200px;
