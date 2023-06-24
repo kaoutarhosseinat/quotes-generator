@@ -91,6 +91,12 @@ a:active{
     justify-content: center;
     align-items: center;
 }
+.title {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+}
 .sub-title{
     margin-top: 12px;
     text-align: center;
