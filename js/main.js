@@ -1,3 +1,4 @@
+//an array of quotes
 const quotes = [
   { quote: '"Programming is like writing a great novel. You start with an idea and then revise and revise until it\'s just right."', author: '- Bill Gates.' },
   { quote: '"The computer science was born to solve problems that did not exist before."', author: '- Bill Gates.' },
@@ -18,25 +19,26 @@ let author = document.querySelector(".author");
 let likeButton = document.querySelector(".like-icon");
 let favoriteQuotes = [];
 let favoriteQuotesContainer = document.querySelector("#favorite-quotes");
-
+// Add event listener to the button to display a random quote when clicked
 btn.addEventListener('click', function () {
   let random = Math.floor(Math.random() * quotes.length);
   let selectedQuote = quotes[random];
   quote.textContent = selectedQuote.quote;
   author.textContent = selectedQuote.author;
 });
-
+// Add event listener to the like button to save the current quote as a favorite
 likeButton.addEventListener('click', function () {
   let currentQuote = quote.textContent;
   let currentAuthor = author.textContent;
-
+// Find the selected quote object from the array
   let selectedQuote = quotes.find(function (quoteObj) {
     return quoteObj.quote === currentQuote && quoteObj.author === currentAuthor;
   });
-
+// Check if the quote is found and not already in the favorites
   if (selectedQuote && !favoriteQuotes.includes(selectedQuote)) {
+    // Add the quote to the favoriteQuotes array
     favoriteQuotes.push(selectedQuote);
-
+// Create a new list item to display the quote in the favorite quotes container
     let listItem = document.createElement("li");
     listItem.textContent = `${selectedQuote.quote} ${selectedQuote.author}`;
     listItem.style.padding = '8px';
